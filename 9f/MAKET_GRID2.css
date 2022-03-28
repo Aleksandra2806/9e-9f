@@ -1,0 +1,143 @@
+header {
+    text-align: center; 
+    padding: 20px; 
+    background-color: rgba(0, 183, 255, 0.562);
+    color: blue; 
+    font-weight: bold;
+}
+menu {
+    background: rgb(253, 255, 144);
+    margin: 0;
+}
+a:hover {
+    color:red;
+}
+aside {
+    background: rgb(166, 255, 144);
+}
+main{
+    background: url(ball.png) right top repeat-y;
+    background-size: 50px 50px;
+    background-color: white; 
+}
+h1 {
+    margin: auto;
+}
+img {
+    float: left;
+    margin: 10px;
+    max-width: 50%;
+}
+footer {
+    text-align: center; 
+    padding: 20px; 
+    background-color: rgba(0, 183, 255, 0.562);
+    color: blue; 
+    font-weight: bold;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 230px 1fr 230px;
+    padding: 0;
+    grid-template-areas: 
+    'header header header'
+    'menu main aside'
+    'footer footer footer';
+}
+header {
+    grid-area: header;
+}
+menu {
+    grid-area: menu;
+}
+main {
+    grid-area: main;
+}
+aside {
+    grid-area: aside;
+}
+footer {
+    grid-area: footer;
+}
+.text-menu {
+    font-weight: bold;
+}
+.text-news {
+    font-size: 13px;
+    text-align: justify;
+    margin-left: 8px;
+    margin-right: 8px;
+    font-style: italic;
+    font-weight: bold;
+}
+.text-news:hover {
+    color: blue;
+}
+.text-main-column {
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+@media all and (max-width: 740px) {
+    .grid {
+        grid-template-columns: 230px 1fr;
+        grid-template-areas: 
+            'header header'
+            'menu main'
+            'aside aside'
+            'footer footer';
+    }
+    .text-news {
+        text-align: center;
+    }
+}
+@media all and (max-width: 500px) {
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            'header'
+            'menu'
+            'main'
+            'aside'
+            'footer';
+    }
+}
+@media all and (max-width: 278px) {
+    img {
+        max-width: 95%;
+    }
+    .main-column {
+        background: white;
+    }
+    .text-main-column {
+        text-align: justify;
+    }
+}
+@media all and (max-width: 230px) {
+    ul {
+        list-style-type: none;
+        padding-left: 10;
+    }
+    ul li {
+        display: inline-block;
+    }
+    li {
+        padding-right: 10;
+    }
+    header,
+    aside,
+    footer {
+        display: none;
+    }
+    menu,
+    main {
+        background: none;
+        display: inline;
+        padding: 0;
+    }
+    .grid {
+        grid-template-areas: 
+            'main'
+            'menu';
+    }
+}
